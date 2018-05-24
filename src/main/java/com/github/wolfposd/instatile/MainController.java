@@ -184,8 +184,8 @@ public class MainController {
 
     public void applyTileButton() {
 
-        final int h = originalImage.getHeight();
-        final int w = originalImage.getWidth();
+        final int h = modifiedImage.getHeight();
+        final int w = modifiedImage.getWidth();
         final int chunks = rows * cols;
 
         int chunkWidth = w / cols; // determines the chunk width and height
@@ -196,10 +196,10 @@ public class MainController {
 
         for (int x = 0; x < rows; x++) {
             for (int y = 0; y < cols; y++) {
-                imgs[count] = new BufferedImage(chunkWidth, chunkHeight, originalImage.getType());
+                imgs[count] = new BufferedImage(chunkWidth, chunkHeight, modifiedImage.getType());
 
                 Graphics2D gr = imgs[count++].createGraphics();
-                gr.drawImage(originalImage, 0, 0, chunkWidth, chunkHeight, chunkWidth * y, chunkHeight * x, chunkWidth * y + chunkWidth, chunkHeight * x
+                gr.drawImage(modifiedImage, 0, 0, chunkWidth, chunkHeight, chunkWidth * y, chunkHeight * x, chunkWidth * y + chunkWidth, chunkHeight * x
                         + chunkHeight, null);
                 gr.dispose();
             }
