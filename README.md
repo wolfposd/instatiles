@@ -9,6 +9,7 @@ A
 
 
 Output:
+
 a a a
 
 a a a 
